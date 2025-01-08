@@ -5,7 +5,7 @@ import { AnswerResponseDto } from './answer.dto';
 import { AskQuestionDto } from './question.dto';
 
 @ApiTags('lucia')
-@Controller('lucia')
+@Controller('api/v1/lucia')
 export class AppController {
   constructor(private readonly OpenAIService: OpenAIService) {}
 

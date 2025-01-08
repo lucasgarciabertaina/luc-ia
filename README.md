@@ -1,4 +1,9 @@
-# Lucía - Personal Assistant Customizable 🤖
+# Lucía Version 1.0 - Personal Assistant Customizable 🤖
+
+## Version 1.0
+
+- **Stable release**
+- **Fully functional features**
 
 Lucía is a personal assistant designed to handle any kind of inquiry and provide information about the users who configure it. Lucía can be customized to assist any person by providing a context file.
 

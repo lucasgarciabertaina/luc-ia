@@ -8,7 +8,7 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('Lucía API')
     .setDescription('API documentation for the Lucía personal assistant')
-    .setVersion('1.0')
+    .setVersion('1.0.0')
     .addTag('assistant')
     .build();
 
