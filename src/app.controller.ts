@@ -1,12 +1,14 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { OpenAIService } from './openai/openai.service';
+import { Body, Controller, HttpStatus, Post } from '@nestjs/common';
+import { AnswerResponseDto } from './answer.dto';
 
-@Controller()
+@Controller('lucia')
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly OpenAIService: OpenAIService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Post('/ask')
+  async getAnswer(@Body() body): Promise<AnswerResponseDto> {
+    const answer = await this.OpenAIService.getAnswer(body.question);
+    return new AnswerResponseDto(HttpStatus.OK, 'Success', answer);
   }
 }
