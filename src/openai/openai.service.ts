@@ -1,3 +1,4 @@
+import { CONTEXT } from './context';
 import { Injectable } from '@nestjs/common';
 import { OpenAIProvider } from './openai.provider';
 
@@ -7,8 +8,9 @@ export class OpenAIService {
 
   async getAnswer(question: string): Promise<string> {
     const client = this.openAIProvider.getClient();
+
     const response = await client.chat.completions.create({
-      messages: [{ role: 'user', content: question }],
+      messages: [...CONTEXT, { role: 'user', content: question }],
       model: 'gpt-4',
     });
 
